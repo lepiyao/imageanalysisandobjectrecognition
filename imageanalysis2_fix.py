@@ -53,7 +53,7 @@ arrayImageYNormed = np.array(arrayImageYNormed, np.int32)
 cv2.imwrite("Image Y.jpg", arrayImageYNormed)
 
 arrayMagnitudeNormed = 255 * (gradMagnitude - gradMagnitude.min()) / (gradMagnitude.max() - gradMagnitude.min())
-arrayMagnitudeNormed = np.array(gradMagnitude, np.int32)
+arrayMagnitudeNormed = np.array(arrayMagnitudeNormed, np.int32)
 cv2.imwrite("Gradient Magnitude.jpg", arrayMagnitudeNormed)
 #==================================
 
@@ -115,11 +115,11 @@ df2 = pd.DataFrame(Q).fillna(0)
 Q_Convert = df2.to_numpy()
 #==================================
 
-arrayWNormed = 255 * (W - W.min()) / (W.max() - W.min())
+arrayWNormed = 255 * (W_Convert - W_Convert.min()) / (W_Convert.max() - W_Convert.min())
 arrayImageXNormed = np.array(arrayWNormed, np.int32)
 cv2.imwrite("W image.jpg", arrayWNormed)
 
-arrayQNormed = 255 * (Q - Q.min()) / (Q.max() - Q.min())
+arrayQNormed = 255 * (Q_Convert - Q_Convert.min()) / (Q_Convert.max() - Q_Convert.min())
 arrayQNormed = np.array(arrayQNormed, np.int32)
 cv2.imwrite("Q image.jpg", arrayQNormed)
 
